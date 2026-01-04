@@ -1,0 +1,70 @@
+#:import dp kivy.metrics.dp
+
+<Stick>:
+    size: dp(170), dp(170)
+
+    canvas:
+        Color:
+            rgba: 0.25, 0.25, 0.25, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+        Color:
+            rgba: 0.85, 0.85, 0.85, 1
+        Ellipse:
+            size: dp(50), dp(50)
+            pos:
+                self.center_x + self.x_axis * (self.width / 2 - dp(25)) - dp(25), \
+                self.center_y + self.y_axis * (self.height / 2 - dp(25)) - dp(25)
+
+
+<ControlButton>:
+    canvas:
+        Color:
+            rgba: (0.2, 0.8, 0.2, 1) if self.pressed else (0.8, 0.2, 0.2, 1)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<ControllerRoot>:
+    Stick:
+        id: stick
+        pos: dp(40), dp(40)
+
+    ControlButton:
+        name: "A"
+        label: "A"
+        size: dp(100), dp(100)
+        pos: root.width - dp(150), dp(90)
+
+    ControlButton:
+        name: "B"
+        label: "B"
+        size: dp(100), dp(100)
+        pos: root.width - dp(260), dp(90)
+
+    ControlButton:
+        name: "C"
+        label: "C"
+        size: dp(100), dp(100)
+        pos: root.width - dp(150), dp(200)
+
+    ControlButton:
+        name: "D"
+        label: "D"
+        size: dp(100), dp(100)
+        pos: root.width - dp(260), dp(200)
+
+    ControlButton:
+        name: "COIN"
+        label: "COIN"
+        size: dp(90), dp(90)
+        pos: dp(20), root.height - dp(110)
+
+    ControlButton:
+        name: "START"
+        label: "START"
+        size: dp(90), dp(90)
+        pos: dp(120), root.height - dp(110)
